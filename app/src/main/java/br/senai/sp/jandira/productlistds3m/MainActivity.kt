@@ -47,25 +47,24 @@ fun Greeting(name: String) {
         LazyColumn(
             modifier = Modifier.padding(16.dp)
         ) {
-            for (i in 1..5) {
-                item {
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 8.dp),
-                    ) {
-                        Column() {
-                            Text(
-                                text = "item $i",
-                                fontSize = 20.sp,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(text = "item 1-$i")
-                        }
+
+            items(10) {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 8.dp),
+                ) {
+                    Column() {
+                        Text(
+                            text = "item ${it+1}",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(text = "item 1-${it+1}")
                     }
                 }
-
             }
+
 
         }
     }
