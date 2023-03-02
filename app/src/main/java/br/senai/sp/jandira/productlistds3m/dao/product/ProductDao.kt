@@ -9,10 +9,7 @@ interface ProductDao {
     fun saveProduct(product: Product): Long
 
     @Delete
-    fun deleteProduct(product: Product): Long
-
-    @Update
-    fun updateProduct(product: Product): Long
+    fun deleteProduct(product: Product): Int
 
     @Query("SELECT * FROM tbl_product ORDER BY product_name ASC")
     fun getAllProducts(): List<Product>
